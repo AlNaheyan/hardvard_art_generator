@@ -1,0 +1,166 @@
+:root {
+  --primary: #5d5fef;
+  --primary-dark: #4a4cc8;
+  --secondary: #f8f9fa;
+  --accent: #ff6b6b;
+  --text: #2d3748;
+  --text-light: #718096;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.discover-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 1.5rem 0;
+}
+
+.discover-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.discover-button:disabled {
+  background-color: var(--text-light);
+  transform: none;
+}
+
+.artwork-container {
+  margin-top: 2rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
+
+.artwork-image {
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+}
+
+.artwork-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 450px;
+}
+
+.no-image {
+  height: 250px;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+}
+
+.artwork-info {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.artwork-info h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.attribute {
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.attribute:hover {
+  background-color: rgba(93, 95, 239, 0.1);
+}
+
+.attribute.banned {
+  background-color: rgba(255, 107, 107, 0.2);
+  text-decoration: line-through;
+}
+
+.ban-list {
+  background-color: var(--secondary);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.ban-list h3 {
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.ban-item {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ban-item:hover {
+  opacity: 0.8;
+}
+
+.error {
+  color: var(--accent);
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .artwork-info h2 {
+    font-size: 1.25rem;
+  }
+}
+
